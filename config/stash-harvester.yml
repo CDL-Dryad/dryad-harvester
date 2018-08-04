@@ -6,7 +6,7 @@ test:
   <<: *defaults
   index:
     adapter: Solr
-    url: http://uc3-dash2solr-dev.cdlib.org:8983/solr/geoblacklight
+    url: http://uc3-dryadsolr-dev.cdlib.org:8983/solr/geoblacklight
     open_timeout: 120          # connection open timeout in seconds
     read_timeout: 300          # read timeout in seconds
     retry_503: 3               # max retries
@@ -27,7 +27,7 @@ development:
   <<: *defaults
   index:
     adapter: Solr
-    url: http://uc3-dash2solr-dev.cdlib.org:8983/solr/geoblacklight
+    url: http://uc3-dryadsolr-dev.cdlib.org:8983/solr/geoblacklight
     open_timeout: 120          # connection open timeout in seconds
     read_timeout: 300          # read timeout in seconds
     retry_503: 3               # max retries
@@ -41,13 +41,13 @@ development:
     adapter: sqlite3
     database: db/development.sqlite3
     pool: 5
-  update_uri: https://dash-dev.ucop.edu/stash/dataset
+  update_uri: https://dryad-dev.ucop.edu/stash/dataset
 
 stage:
   <<: *defaults
   index:
     adapter: Solr
-    url: http://uc3-dash2solr-stg.cdlib.org:8983/solr/geoblacklight
+    url: http://uc3-dryadsolr-stg.cdlib.org:8983/solr/geoblacklight
     open_timeout: 120          # connection open timeout in seconds
     read_timeout: 300          # read timeout in seconds
     retry_503: 3               # max retries
@@ -75,13 +75,13 @@ stage:
     adapter: sqlite3
     database: db/stage.sqlite3
     pool: 5
-  update_uri: https://dash-stg.ucop.edu/stash/dataset
+  update_uri: https://dryad-stg.ucop.edu/stash/dataset
 
 demo:
   <<: *defaults
   index:
     adapter: Solr
-    url: http://uc3-dashdemo-stg.cdlib.org:8983/solr/geoblacklight
+    url: http://uc3-dryaddemo-stg.cdlib.org:8983/solr/geoblacklight
     open_timeout: 120          # connection open timeout in seconds
     read_timeout: 300          # read timeout in seconds
     retry_503: 3               # max retries
@@ -96,13 +96,13 @@ demo:
     adapter: sqlite3
     database: db/demo.sqlite3
     pool: 5
-  update_uri: https://dashdemo.ucop.edu/stash/dataset
+  update_uri: https://dryaddemo.ucop.edu/stash/dataset
 
 production:
   <<: *defaults
   index:
     adapter: Solr
-    url: http://uc3-dash2solr-prd.cdlib.org:8983/solr/geoblacklight
+    url: http://uc3-dryadsolr-prd.cdlib.org:8983/solr/geoblacklight
     open_timeout: 120          # connection open timeout in seconds
     read_timeout: 300          # read timeout in seconds
     retry_503: 3               # max retries
@@ -116,5 +116,5 @@ production:
     adapter: sqlite3
     database: db/production.sqlite3
     pool: 5
-  update_uri: https://dash.ucop.edu/stash/dataset
+  update_uri: https://dryad.cdlib.org/stash/dataset
 

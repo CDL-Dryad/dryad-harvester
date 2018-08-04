@@ -1,3 +1,3 @@
 set :stash_env, 'demo'
 
-server 'uc3-dashdemo-stg.cdlib.org', user: 'dash2'
+server 'uc3-dryaddemo-stg.cdlib.org', user: 'dryad'
