@@ -2,7 +2,7 @@
 # lock '3.4.0'
 
 set :application, 'dryad-harvester'
-set :repo_url, 'git@github.com:CDL-Dryad/dryad-harvester.git'
+set :repo_url, 'https://github.com/CDL-Dryad/dryad-harvester.git'
 set :deploy_to, '/apps/dryad/apps/dryad-harvester'
 
 # Default value for linked_dirs is []
