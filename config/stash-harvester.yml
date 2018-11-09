@@ -13,7 +13,7 @@ test:
     retry_after_limit: 20      # retry wait time in seconds
   source:
     protocol: OAI
-    oai_base_url: http://uc3-mrtoai-dev.cdlib.org:37001/mrtoai/oai/v2
+    oai_base_url: http://uc3-mrtoai-stg.cdlib.org:37001/mrtoai/oai/v2
     metadata_prefix: stash_wrapper
     seconds_granularity: true
   db:
@@ -34,9 +34,10 @@ development:
     retry_after_limit: 20      # retry wait time in seconds
   source:
     protocol: OAI
-    oai_base_url: http://uc3-mrtoai-dev.cdlib.org:37001/mrtoai/oai/v2
+    oai_base_url: http://uc3-mrtoai-stg.cdlib.org:37001/mrtoai/oai/v2
     metadata_prefix: stash_wrapper
     seconds_granularity: true
+    set: cdl_dryaddev
   db:
     adapter: sqlite3
     database: db/development.sqlite3
@@ -58,24 +59,14 @@ stage:
     metadata_prefix: stash_wrapper
     seconds_granularity: true
     sets:
-      - dataone_dash
-      - lbnl_dash
-      - ucb_dash
-      - ucd_dash
-      - uci_dash
-      - ucm_dash
-      - ucop_dash
-      - ucr_dash
-      - ucsc_dash
-      - ucsf_datashare_submitter
-      - ucpress_dash
-      - ucsb_dash
-      - ocdp_dash
+      - cdl_dryadstg
+      - ucsf_dryadstg
+      - ucsb_dryadstg
   db:
     adapter: sqlite3
     database: db/stage.sqlite3
     pool: 5
-  update_uri: https://dryad-stg.ucop.edu/stash/dataset
+  update_uri: https://dryad-stg.cdlib.org/stash/dataset
 
 demo:
   <<: *defaults
@@ -91,7 +82,7 @@ demo:
     oai_base_url: http://uc3-mrtoai-stg.cdlib.org:37001/mrtoai/oai/v2
     metadata_prefix: stash_wrapper
     seconds_granularity: true
-    set: cdl_dash_demo
+    set: cdl_dryad_demo
   db:
     adapter: sqlite3
     database: db/demo.sqlite3
@@ -117,4 +108,3 @@ production:
     database: db/production.sqlite3
     pool: 5
   update_uri: https://dryad.cdlib.org/stash/dataset
-
